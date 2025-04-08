@@ -25,7 +25,7 @@ def add_entry():
     db.session.commit()
 
     return jsonify({"message": "Entry added successfully!"})
-@app.route('/add', methods=['GET'])
+@app.route('/entries', methods=['GET'])
 def get_entries():
     """Fetches all budget entries from the database."""
     entries = BudgetEntry.query.all()
