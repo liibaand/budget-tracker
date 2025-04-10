@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime
 
 db = SQLAlchemy()
 
@@ -21,10 +22,9 @@ class BudgetEntry(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     category = db.Column(db.String(100), nullable=False)
     amount = db.Column(db.Float, nullable=False)
-    date = db.Column(db.Date, nullable=False)
-
+    date = db.Column(db.DateTime, default=datetime.utcnow)  
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
+    
     def __repr__(self):
         return f'<BudgetEntry {self.category} {self.amount}>'
 

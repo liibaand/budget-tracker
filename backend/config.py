@@ -9,3 +9,7 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = os.environ.get("SECRET_KEY", "dev-secret-key")
 
+
+class TestConfig(Config):
+    # Test-specific database URI
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///test_budget.db'
