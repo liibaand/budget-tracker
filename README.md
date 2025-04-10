@@ -8,7 +8,7 @@ A simple budget tracking application built with Flask and SQLite.
 - Flask  
 - SQLAlchemy (ORM)  
 - SQLite (for local testing)  
-
+- React Frontend/ CSS
 ---
 
 ## Installation
@@ -48,6 +48,11 @@ python3 app.py
 The API will be available at:  
 `http://127.0.0.1:5000/`
 
+`cd frontend
+npm install
+npm start`
+
+
 ---
 
 ## Folder Structure
@@ -55,12 +60,20 @@ The API will be available at:
 ```
 budget-tracker/
 │
-├── app.py
-├── models.py
-├── routes.py
+├── backend/
+│   ├── app.py
+│   ├── models.py
+│   ├── config.py
+│   ├── tests
+│
+├── frontend/
+│   ├── public 
+│   ├── src
+│
 ├── requirements.txt
-├── venv/ (your virtual environment)
-└── README.md
+├── README.md
+└── .gitignore
+
 ```
 
 ---
