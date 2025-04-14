@@ -2,6 +2,15 @@
 
 A simple budget tracking application built with Flask and SQLite.
 
+## 📸 App Screenshots
+
+### 🏠 Login
+![Login](./screenshots/login.png)
+
+### 📊 Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+
 ## Technologies Used
 
 - Python 3  
