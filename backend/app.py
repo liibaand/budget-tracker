@@ -4,7 +4,7 @@ Handles routing and API requests.
 """
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from models import db, BudgetEntry, User # Imports database and model
+from models import db, BudgetEntry, User 
 from config import Config
 from datetime import datetime
 
@@ -75,7 +75,7 @@ def create_app(config_class=Config):
 
     return app
 
-# Only run the app if executed directly
+
 if __name__ == '__main__':
     app = create_app()
     app.run(debug=True, port=5000)
