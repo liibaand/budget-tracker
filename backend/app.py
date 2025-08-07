@@ -45,28 +45,9 @@ def create_app(config_class=Config):
             return jsonify({"message": "Login successful", "user_id": user.id})
         return jsonify({"error": "Wrong username or password"}), 401
 
-    @app.route('/add', methods=['POST'])
-    def add_entry():
-        try:
-            data = request.get_json()
-            category = data.get('category')
-            amount = data.get('amount')
-            date_str = data.get('date')
-            user_id = data.get('user_id')
-            if not category or not amount or not date_str or not user_id:
-                return jsonify({"error": "Missing Data"}), 400
-            try:
-                date = datetime.strptime(date_str, "%Y-%m-%d").date()
-            except ValueError:
-                return jsonify({"error": "Invalid date format. Use YYYY-MM-DD."}), 400
-            new_entry = BudgetEntry(category=category, amount=amount, date=date, user_id=user_id)
-            db.session.add(new_entry)
-            db.session.commit()
-            return jsonify({"message": "Entry added successfully!"})
-        except Exception as e:
-            db.session.rollback()
-            return jsonify({"error": "Failed to add entry. Please try again."}), 500
-
+# @app.route('/add', methods=['POST'])
+#    def add_entry():
+       
     @app.route('/entries', methods=['GET'])
     def get_entries():
         entries = BudgetEntry.query.all()
