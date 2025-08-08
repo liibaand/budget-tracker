@@ -108,22 +108,7 @@ Add a new budget entry.
 
 ```
 ---
-### `Get /entries`
 
-Retrieves all budget entries.
-```json
-[
-  {
-    "category": "Food",
-    "amount": 25.00,
-    "date": "2025-04-07"
-  },
-  {
-    "category": "Food",
-    "amount": 25.00,
-    "date": "2025-04-07"
-  }
-]
 ```
 ---
 ## License
